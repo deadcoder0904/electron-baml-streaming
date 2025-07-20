@@ -1,4 +1,4 @@
-import { partial_types } from '../../../../baml_client/partial_types'
+import { partial_types } from '../../../../baml_client/index'
 import { User } from '../../../../baml_client/types'
 
 export type StreamingStatus =

@@ -12,7 +12,13 @@ export const formatAddress = (
 	// Handle both regular address and streaming address with state
 	const addr = 'value' in address ? address.value : address
 	if (!addr) return ''
-	return `${addr.buildingNumber || ''} ${addr.street || ''}, ${addr.city || ''}, ${addr.zipcode || ''}, ${addr.country || ''}`
+
+	// Type assertion to ensure addr has the correct address properties
+	const typedAddr = addr as User['address'] | partial_types.User['address']
+
+	if (!typedAddr) return ''
+
+	return `${typedAddr.buildingNumber || ''} ${typedAddr.street || ''}, ${typedAddr.city || ''}, ${typedAddr.zipcode || ''}, ${typedAddr.country || ''}`
 		.replace(/,\s*,/g, ',')
 		.replace(/^,\s*|,\s*$/g, '')
 }
