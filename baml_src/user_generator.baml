@@ -20,14 +20,14 @@ class Address {
 }
 
 class User {
-  id int @stream.done
-  firstname string @stream.not_null
-  lastname string @stream.not_null
+  id int
+  firstname string
+  lastname string
   email string
   phone string
   birthday string
-  gender Gender @stream.not_null
-  address Address @stream.with_state
+  gender Gender
+  address Address
 }
 
 function GenerateRandomUser() -> User {

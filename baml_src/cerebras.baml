@@ -4,6 +4,6 @@ client<llm> CerebrasClient {
     base_url "https://api.cerebras.ai/v1"
     api_key env.CEREBRAS_API_KEY
     model "llama-3.3-70b"
-		supports_streaming false
+		supports_streaming true
   }
 }
